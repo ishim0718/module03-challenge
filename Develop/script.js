@@ -10,28 +10,39 @@ function randomUpperCase() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 function randomSymbol() {
-  const specialChar = '!"#$%&\'()*+,-./:;<=>?@[]^_`{|}~'; 
-  return specialChar[Math.floor(Math.random() * specialChar.legnth)];
+  const symbols = '!"#$%&\'()*+,-./:;<=>?@[]^_`{|}~'; 
+  let i = symbols.length;
+  return symbols[Math.floor(Math.random() * i)]; 
 } 
 
-//set password length
-var passwordLength = prompt("How long would you like the password to be?", "Input a number between 8 and 128")
-
-if (passwordLength != null) {
-  prompt("Please enter a valid number between 8 and 128")
+var hasLower = prompt("Would you like to include lowercase letters in your password?", "y/n");
+if (hasLower = "y", "n") {
+  hasLower = hasLower;
 }
-else (passwordLength < 8) {
-  prompt("Please enter a valid number between 8 and 128")
+else {
+ prompt("Please enter a valid response");
 }
-else (passwordLength > 128) {
-  prompt("Please enter a valid number between 8 and 128")
+var hasUpper = prompt("Would you like to include uppercase letters in your password?", "y/n");
+if (hasUpper = "y", "n") {
+  hasUpper = hasUpper;
 }
-else  (Number.isInteger(passwordLength) == false) {
-  prompt("Please enter a valid number between 8 and 128")
+else {
+ prompt("Please enter a valid response");
 }
- return;
-
-
+var hasNumbers = prompt(("Would you like to include numbers in your password?", "y/n"));
+if (hasNumbers = "y", "n") {
+  hasNumbers = hasNumbers;
+}
+else {
+ prompt("Please enter a valid response");
+}
+var passwordLength = prompt("How long would you like the password to be?", "Input a number between 8 and 128");
+if (passwordLength > 8 && passwordLength < 128 && Number.isInteger(Number(passwordLength))) {
+  passwordLength = passwordLength;
+}
+else {
+  prompt("Please enter a valid response")
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
